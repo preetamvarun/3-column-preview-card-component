@@ -62,6 +62,8 @@ body {
     border : .35px solid white;
 }
 
+.box-1, .box-2, .box-3 {flex : 1}
+
 .box-1 a{
     color: hsl(31, 77%, 52%); 
 }
