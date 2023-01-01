@@ -27,7 +27,6 @@ body {
 .main-box{
     max-width : 780px;
     margin : auto;
-    background-color: orange;
     position: relative;
     display: flex;
     color : white;
@@ -39,6 +38,7 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding : 1rem;
     }
 }
 
