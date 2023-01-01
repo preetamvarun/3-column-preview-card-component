@@ -10,9 +10,11 @@
 .box-1{
     background-color: hsl(31, 77%, 52%);
 }
+
 .box-2{
     background-color: hsl(184, 100%, 22%);
 }
+
 .box-3{
     background-color: hsl(179, 100%, 13%);
 }
@@ -29,6 +31,7 @@
 }
 
 .main-box a{
+    position: relative;
     display: inline-block;
     text-decoration: none;
     background-color: white;
@@ -36,11 +39,61 @@
     border-radius: 50px;
     margin-bottom: 2.75rem;
     font-family: 'Lexend Deca', sans-serif;
+    transition-property: color;
+    overflow-x: hidden;
+    transition-duration: 200ms;
+    z-index : 1;
 }
 
-.box-1 a{color: hsl(31, 77%, 52%);}
-.box-2 a{color: hsl(184, 100%, 22%);}
-.box-3 a{color: hsl(179, 100%, 13%);}
+.main-box a:hover{
+    color : white;
+    border : .35px solid white;
+}
+
+.box-1 a{
+    color: hsl(31, 77%, 52%); 
+}
+
+.box-2 a{
+    color: hsl(184, 100%, 22%);
+}
+
+.box-3 a{
+    color: hsl(179, 100%, 13%);
+}
+
+.box-1 a::before{
+    transform-origin: left;
+    background-color: hsl(31, 77%, 52%);
+}
+
+.box-2 a::before{
+    transform-origin: right;
+    background-color: hsl(184, 100%, 22%);;
+}
+
+.box-3 a::before{
+    transform-origin: center;
+    background-color: hsl(179, 100%, 13%);
+}
+
+.main-box a::before{
+    position: absolute;
+    content: '';
+    left : 0;
+    right : 0;
+    top : 0;
+    bottom : 0;
+    transform : scaleX(0);
+    border-radius: 50px;
+    transition-property: transform;
+    transition-duration: 300ms;
+    z-index : -1;
+}
+
+.main-box a:hover::before{
+    transform : scaleX(1);
+}
 
 .main-box h1{
     font-family: 'Big Shoulders Display', cursive;
